@@ -1,19 +1,17 @@
-import {View, Text, StyleSheet, StatusBar} from 'react-native';
+import {View, StyleSheet, StatusBar} from 'react-native';
 import React from 'react';
 import {SafeAreaProvider, SafeAreaView} from 'react-native-safe-area-context';
 import SafeAreaWrapper from './src/components/SafeAreaWrapper';
 
+import {colors} from './src/constants/Theme/Colors';
+import {textVariants} from './src/constants/Theme/TextVariants';
+import Navigator from './src/navigation';
+
 const App = () => {
   return (
     <SafeAreaProvider>
-      <SafeAreaWrapper>
-        <View style={[styles.container]}>
-          <View style={{backgroundColor: 'blue'}}>
-            <Text style={{fontSize: 28, color: 'white'}}>Hello World</Text>
-          </View>
-        </View>
-      </SafeAreaWrapper>
-      <StatusBar barStyle={'light-content'} backgroundColor={'#202020'} />
+      <Navigator />
+      <StatusBar barStyle={'light-content'} backgroundColor={colors.primary} />
     </SafeAreaProvider>
   );
 };
